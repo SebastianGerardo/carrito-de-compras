@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({ productInfo }) => {
+const Card = ({ productInfo, handleAddProduct }) => {
   return (
     <section className='grid grid-rows-2 w-60 h-72 border rounded-md p-1'>
       <article>
@@ -17,7 +17,7 @@ const Card = ({ productInfo }) => {
           </div>
         </div>
         <div className='flex justify-between my-2'>
-          <button className='bg-yellow-400 hover:bg-yellow-500 text-white w-max px-2'>
+          <button onClick={() => handleAddProduct(productInfo)} className='bg-yellow-400 hover:bg-yellow-500 text-white w-max px-2'>
             Add to cart
           </button>
           <p>{productInfo.price}</p>

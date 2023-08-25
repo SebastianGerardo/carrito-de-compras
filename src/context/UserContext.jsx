@@ -4,6 +4,8 @@ export const ContextShop = createContext()
 
 const UserContext = ({ children }) => {
   const [allProducts, setAllProducts] = useState([])
+  const [total, setTotal] = useState(0)
+  const [productsAdded, setProductsAdded] = useState([])
 
   const getProducts = async () => {
     const fetchApi = await fetch(`https://fakestoreapi.com/products?limit=10`)
@@ -17,7 +19,7 @@ const UserContext = ({ children }) => {
   }, [])
 
   return (
-    <ContextShop.Provider value={{ allProducts }}>
+    <ContextShop.Provider value={{ allProducts, total, setTotal, productsAdded, setProductsAdded }}>
       {children}
     </ContextShop.Provider>
   )
