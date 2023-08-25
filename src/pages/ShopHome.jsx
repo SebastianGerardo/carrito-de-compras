@@ -17,11 +17,16 @@ export const ShopHome = () => {
     getProducts()
   }, [])
 
-  console.log(allProducts)
-
   return (
     <div className="max-w-[1200px] mx-auto">
       <Header />
+      <article>
+        {allProducts && allProducts.length > 0 && allProducts.map(product => (
+          <div>
+            {product.title}
+          </div>
+        ))}
+      </article>
     </div>
   )
 }
