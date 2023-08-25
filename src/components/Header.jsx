@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Cart } from '../components/Cart'
 
 const Header = () => {
   const [active, setActive] = useState(false)
@@ -10,7 +11,7 @@ const Header = () => {
 
   return (
     <div className='p-4'>
-      <nav className='flex items-center justify-between'>
+      <nav className='flex items-center justify-between relative'>
         <Link to='/'>SHOP</Link>
         <ul>
           <li onClick={toogleOpen}>
@@ -18,6 +19,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      {active && (
+        <Cart />
+      )}
     </div>
   )
 }
