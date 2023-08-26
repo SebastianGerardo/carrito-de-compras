@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardProductAdded = ({ productInfo }) => {
+const CardProductAdded = ({ productInfo, handleDeleteProduct }) => {
   return (
     <section className='grid grid-cols-[40%_auto] border rounded-md bg-white'>
       <article className='flex justify-center border-r'>
@@ -11,7 +11,7 @@ const CardProductAdded = ({ productInfo }) => {
       <article className='flex flex-col justify-between p-1'>
         <div className='flex justify-between gap-1'>
           <h1 className='line-clamp-1'>{productInfo.title}</h1>
-          <button>
+          <button onClick={() => handleDeleteProduct(productInfo)}>
             X
           </button>
         </div>

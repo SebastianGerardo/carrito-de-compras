@@ -1,7 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Cart } from '../components/Cart'
-import { ContextShop } from '../context/UserContext'
 
 const Header = () => {
   const [active, setActive] = useState(false)
@@ -21,7 +20,7 @@ const Header = () => {
         </ul>
       </nav>
       {active && (
-        <Cart />
+        <Cart handleClearCart />
       )}
     </div>
   )
