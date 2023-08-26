@@ -4,8 +4,6 @@ import { Cart } from '../components/Cart'
 import { ContextShop } from '../context/UserContext'
 
 const Header = () => {
-  const { total, setTotal, productsAdded, setProductsAdded } = useContext(ContextShop)
-
   const [active, setActive] = useState(false)
 
   const toogleOpen = () => {

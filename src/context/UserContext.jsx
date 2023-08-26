@@ -17,9 +17,9 @@ const UserContext = ({ children }) => {
   useEffect(() => {
     getProducts()
   }, [])
-
+  
   return (
-    <ContextShop.Provider value={{ allProducts, total, setTotal, productsAdded, setProductsAdded }}>
+    <ContextShop.Provider value={{ allProducts, setAllProducts, total, setTotal, productsAdded, setProductsAdded }}>
       {children}
     </ContextShop.Provider>
   )
